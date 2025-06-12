@@ -1,0 +1,146 @@
+/* Reset some default styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #ffffff; /* white background */
+  color: #05490c; /* dark green text */
+  line-height: 1.6;
+}
+
+header {
+  background-color: #1a7a1a; /* medium green */
+  color: white;
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+header h1 {
+  font-size: 1.8rem;
+  letter-spacing: 2px;
+}
+
+nav a {
+  color: white;
+  margin-left: 1.5rem;
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.3s ease;
+}
+
+nav a:hover {
+  color: #a1d99b; /* lighter green */
+}
+
+main {
+  padding: 2rem;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+#hero {
+  background-color: #d8f0d3; /* very light green */
+  padding: 2rem;
+  border-radius: 8px;
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+#hero h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+#products h2,
+#about h2,
+#contact h2 {
+  margin-bottom: 1rem;
+  color: #2f662f; /* darker green */
+  border-bottom: 2px solid #2f662f;
+  padding-bottom: 0.5rem;
+  max-width: max-content;
+}
+
+.product-list {
+  display: flex;
+  gap: 2rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.product {
+  border: 1px solid #a8d5a3;
+  border-radius: 8px;
+  padding: 1rem;
+  width: 220px;
+  text-align: center;
+  background-color: #f9fff9;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease;
+}
+
+.product:hover {
+  transform: translateY(-5px);
+}
+
+.product img {
+  width: 100%;
+  border-radius: 6px;
+  margin-bottom: 0.8rem;
+}
+
+.product h3 {
+  color: #1a7a1a;
+  margin-bottom: 0.5rem;
+}
+
+.product p {
+  font-size: 0.9rem;
+  color: #3e6f3e;
+  margin-bottom: 0.8rem;
+}
+
+.price {
+  font-weight: 700;
+  font-size: 1.1rem;
+  margin-bottom: 1rem;
+  color: #05490c;
+}
+
+button {
+  background-color: #1a7a1a;
+  color: white;
+  border: none;
+  padding: 0.6rem 1.2rem;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #145114;
+}
+
+#about, #contact {
+  margin-top: 3rem;
+  background-color: #d8f0d3;
+  padding: 1.5rem;
+  border-radius: 8px;
+  color: #2f662f;
+}
+
+footer {
+  text-align: center;
+  padding: 1rem;
+  background-color: #1a7a1a;
+  color: white;
+  margin-top: 3rem;
+  font-size: 0.9rem;
+}
