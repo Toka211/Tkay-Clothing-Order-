@@ -15,14 +15,12 @@
     body {
       font-family: Arial, sans-serif;
       margin: 0;
-      background: #f9f9f9 url('good.png') center center no-repeat;
-      background-size: contain;
-      background-attachment: fixed;
+      background-color: #f9f9f9;
       color: var(--text-dark);
     }
 
     header {
-      background: var(--primary);
+      background-color: var(--primary);
       color: var(--white);
       padding: 1rem 2rem;
       display: flex;
@@ -31,19 +29,15 @@
       flex-wrap: wrap;
     }
 
-    header .logo {
-      width: 50px;
+    .logo {
       height: 50px;
-      border-radius: 50%;
-      object-fit: cover;
-      border: 2px solid white;
-      background: white;
       margin-right: 1rem;
     }
 
     header h1 {
       font-size: 1.5rem;
       margin: 0;
+      flex: 1;
     }
 
     nav {
@@ -61,15 +55,11 @@
       text-decoration: underline;
     }
 
-    main {
-      padding: 2rem;
-    }
-
     section {
       display: none;
       padding: 2rem;
-      background: var(--light-bg);
-      margin: 1rem 0;
+      background-color: var(--light-bg);
+      margin: 1rem;
       border-radius: 10px;
     }
 
@@ -91,7 +81,6 @@
       padding: 1rem;
       width: 250px;
       text-align: center;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
     }
 
     .product img {
@@ -103,7 +92,6 @@
     .price {
       font-weight: bold;
       margin: 0.5rem 0;
-      color: #2e7d32;
     }
 
     button {
@@ -117,29 +105,28 @@
     }
 
     button:hover {
-      background: #1e512e;
-    }
-
-    #about, #contact {
-      background-color: #d8f0d3;
-      padding: 1.5rem;
-      border-radius: 8px;
-      margin-top: 2rem;
+      background-color: #256728;
     }
 
     footer {
-      background: #1a7a1a;
+      background: #eee;
       text-align: center;
-      color: white;
       padding: 1rem;
       margin-top: 2rem;
       font-size: 0.9rem;
     }
+
+    .hero-logo {
+      width: 150px;
+      display: block;
+      margin: 0 auto 1rem;
+    }
   </style>
 </head>
 <body>
+
   <header>
-    <img src="good.png" alt="Tkay Clothing Logo" class="logo" />
+    <img src="good1.png" alt="Tkay Logo" class="logo" />
     <h1>Tkay Clothing</h1>
     <nav>
       <a href="#products" onclick="showSection('products')">Products</a>
@@ -150,6 +137,7 @@
 
   <main>
     <section id="hero" class="active">
+      <img src="good.png" alt="Big Tkay Logo" class="hero-logo" />
       <h2>Welcome to Tkay Clothing</h2>
       <p>Fresh styles for every day. Shop your favorite looks now!</p>
     </section>
@@ -158,7 +146,7 @@
       <h2>Featured Products</h2>
       <div class="product-list">
         <article class="product">
-          <img src="10.jpg" alt="Comfy Socks" />
+          <img src="10.jpg" alt="comfy socks" />
           <h3>Comfy Socks</h3>
           <p>Simple, comfortable, and stylish.</p>
           <p class="price">M100</p>
@@ -167,7 +155,7 @@
         <article class="product">
           <img src="03.png" alt="Nike" />
           <h3>Black and Red Nike</h3>
-          <p>Stay cozy with this signature shoe.</p>
+          <p>Stay cozy with this signature shoes.</p>
           <p class="price">M600</p>
           <button onclick="window.open('https://wa.me/26659742411?text=Interested%20in%20Nike%20Shoes')">Buy Now</button>
         </article>
@@ -201,11 +189,12 @@
 
   <script>
     function showSection(id) {
-      const sections = document.querySelectorAll("main section");
-      sections.forEach(section => section.classList.remove("active"));
-      const target = document.getElementById(id);
-      if (target) target.classList.add("active");
+      document.querySelectorAll('main section').forEach(section => {
+        section.classList.remove('active');
+      });
+      document.getElementById(id).classList.add('active');
     }
   </script>
+
 </body>
-                                                              </html>
+</html>
