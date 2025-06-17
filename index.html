@@ -15,7 +15,9 @@
     body {
       font-family: Arial, sans-serif;
       margin: 0;
-      background: #f9f9f9;
+      background: #f9f9f9 url('good.png') center center no-repeat;
+      background-size: contain;
+      background-attachment: fixed;
       color: var(--text-dark);
     }
 
@@ -29,15 +31,13 @@
       flex-wrap: wrap;
     }
 
-    .header-left {
-      display: flex;
-      align-items: center;
-      flex-wrap: wrap;
-    }
-
-    .logo {
+    header .logo {
+      width: 50px;
       height: 50px;
-      width: auto;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 2px solid white;
+      background: white;
       margin-right: 1rem;
     }
 
@@ -46,41 +46,30 @@
       margin: 0;
     }
 
+    nav {
+      display: flex;
+      gap: 1rem;
+    }
+
     nav a {
       color: var(--white);
-      margin-left: 1rem;
       text-decoration: none;
       font-weight: bold;
-      cursor: pointer;
     }
 
     nav a:hover {
       text-decoration: underline;
     }
 
-    @media (max-width: 600px) {
-      header {
-        flex-direction: column;
-        align-items: flex-start;
-      }
-
-      nav {
-        margin-top: 1rem;
-        display: flex;
-        flex-direction: column;
-        gap: 0.5rem;
-      }
-
-      nav a {
-        margin-left: 0;
-      }
+    main {
+      padding: 2rem;
     }
 
     section {
       display: none;
       padding: 2rem;
       background: var(--light-bg);
-      margin: 1rem;
+      margin: 1rem 0;
       border-radius: 10px;
     }
 
@@ -102,6 +91,7 @@
       padding: 1rem;
       width: 250px;
       text-align: center;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
     }
 
     .product img {
@@ -113,6 +103,7 @@
     .price {
       font-weight: bold;
       margin: 0.5rem 0;
+      color: #2e7d32;
     }
 
     button {
@@ -125,9 +116,21 @@
       font-weight: bold;
     }
 
+    button:hover {
+      background: #1e512e;
+    }
+
+    #about, #contact {
+      background-color: #d8f0d3;
+      padding: 1.5rem;
+      border-radius: 8px;
+      margin-top: 2rem;
+    }
+
     footer {
-      background: #eee;
+      background: #1a7a1a;
       text-align: center;
+      color: white;
       padding: 1rem;
       margin-top: 2rem;
       font-size: 0.9rem;
@@ -136,10 +139,8 @@
 </head>
 <body>
   <header>
-    <div class="header-left">
-      <img src="good.png" alt="Tkay Clothing Logo" class="logo" />
-      <h1>Tkay Clothing</h1>
-    </div>
+    <img src="good.png" alt="Tkay Clothing Logo" class="logo" />
+    <h1>Tkay Clothing</h1>
     <nav>
       <a href="#products" onclick="showSection('products')">Products</a>
       <a href="#about" onclick="showSection('about')">About</a>
@@ -157,16 +158,16 @@
       <h2>Featured Products</h2>
       <div class="product-list">
         <article class="product">
-          <img src="10.jpg" alt="comfy socks" />
+          <img src="10.jpg" alt="Comfy Socks" />
           <h3>Comfy Socks</h3>
           <p>Simple, comfortable, and stylish.</p>
           <p class="price">M100</p>
           <button onclick="window.open('https://wa.me/26659742411?text=Interested%20in%20Comfy%20Socks')">Buy Now</button>
         </article>
         <article class="product">
-          <img src="03.png" alt="Nike Shoes" />
+          <img src="03.png" alt="Nike" />
           <h3>Black and Red Nike</h3>
-          <p>Stay cozy with this signature shoes.</p>
+          <p>Stay cozy with this signature shoe.</p>
           <p class="price">M600</p>
           <button onclick="window.open('https://wa.me/26659742411?text=Interested%20in%20Nike%20Shoes')">Buy Now</button>
         </article>
@@ -175,7 +176,7 @@
           <h3>Pink Pajamas</h3>
           <p>Stay cozy and cute.</p>
           <p class="price">M205</p>
-          <button onclick="window.open('https://wa.me/26659742411?text=Interested%20in%20Pajamas')">Buy Now</button>
+          <button onclick="window.open('https://wa.me/26659742411?text=Interested%20in%20Pink%20Pajamas')">Buy Now</button>
         </article>
       </div>
     </section>
@@ -201,11 +202,10 @@
   <script>
     function showSection(id) {
       const sections = document.querySelectorAll("main section");
-      sections.forEach(section => {
-        section.classList.remove("active");
-      });
-      document.getElementById(id).classList.add("active");
+      sections.forEach(section => section.classList.remove("active"));
+      const target = document.getElementById(id);
+      if (target) target.classList.add("active");
     }
   </script>
 </body>
-      </html>
+                                                              </html>
